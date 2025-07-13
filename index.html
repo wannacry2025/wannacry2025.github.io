@@ -4,42 +4,54 @@
   <meta charset="UTF-8">
   <title>Leaked Hehehe</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background-color: black;
       color: limegreen;
       font-family: 'Courier New', monospace;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: start;
-      height: 100vh;
-      padding-top: 30px;
+      justify-content: flex-start;
       text-align: center;
     }
     h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 6vw;
+      margin: 5vw 0 3vw 0;
     }
     #countdown {
-      font-size: 28px;
-      margin-bottom: 40px;
+      font-size: 5vw;
+      margin-bottom: 5vw;
     }
     .warning {
-      font-size: 16px;
-      max-width: 600px;
-      margin-bottom: 40px;
+      font-size: 4vw;
+      max-width: 90%;
+      margin-bottom: 5vw;
       white-space: pre-line;
     }
     .image {
-      margin-bottom: 20px;
+      margin-bottom: 5vw;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .image img {
+      max-width: 80%;
+      height: auto;
     }
     .copyright {
-      font-size: 12px;
+      font-size: 3vw;
       color: darkgreen;
-      position: absolute;
-      bottom: 10px;
+      margin-top: auto;
+      margin-bottom: 2vw;
+    }
+    @media (min-width: 768px) {
+      h1 { font-size: 36px; }
+      #countdown { font-size: 28px; }
+      .warning { font-size: 18px; }
+      .copyright { font-size: 14px; }
     }
   </style>
 </head>
@@ -52,7 +64,7 @@
   </div>
 
   <div class="image">
-    <img src="https://i.imgur.com/H7KPDLm_d.webp?maxwidth=520&shape=thumb&fidelity=high" alt=" " style="max-width: 300px;">
+    <img src="https://i.imgur.com/H7KPDLm_d.webp?maxwidth=520&shape=thumb&fidelity=high" alt="แฮ็กเกอร์">
   </div>
 
   <div class="copyright">
@@ -84,43 +96,5 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
